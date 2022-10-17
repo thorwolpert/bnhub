@@ -1,0 +1,14 @@
+Flask
+Flask-Babel
+Flask-SQLAlchemy
+flask-jwt-oidc
+google-cloud-storage
+google-cloud-tasks
+gunicorn
+launchdarkly-server-sdk
+lxml
+psycopg2-binary
+python-dotenv
+requests
+sentry-sdk[flask]
+strict-rfc3339
