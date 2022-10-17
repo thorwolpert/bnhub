@@ -1,0 +1,3 @@
+pytest
+mock
+google-cloud-pubsub
