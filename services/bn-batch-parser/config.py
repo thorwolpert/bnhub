@@ -29,6 +29,10 @@ class Config(BaseConfig):
     # Application Config
     LOG_LEVEL = os.getenv('LOG_LEVEL', 'DEBUG')
 
+    # Storage
+    BUCKET_NAME_INCOMING = os.getenv('BUCKET_NAME_INCOMING')
+    BUCKET_NAME_ARCHIVE = os.getenv('BUCKET_NAME_ARCHIVE')
+
     # TASK Configuration
     TASK_PROJECT_ID = os.getenv('TASK_PROJECT_ID')
     TASK_QUEUE_NAME = os.getenv('TASK_QUEUE_NAME')

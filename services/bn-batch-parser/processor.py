@@ -46,18 +46,18 @@ def bn_batch(message_data: dict) -> Tuple[str, int]:
         try:
             _delete_blob(bucket_name, file_name)
         except Exception as err:
-            logging.error('Unable to delete the file: {file_name} left in raw storage.', err)
+            logging.error(f'Unable to delete the file: {file_name} left in raw storage.', err)
 
     except Exception as err:
         # The error won't get raised, since we don't need to reprocess the file
-        logging.error('Unable to archive the file: {file_name} left in raw storage.', err)
+        logging.error(f'Unable to archive the file: {file_name} left in raw storage.', err)
 
     return '', HTTPStatus.OK
 
 def _archive_completed_batch(contents: str, blob_name: str):
     '''Uploads a file to the bucket.'''
 
-    bucket_name = 'bn-raw-processed-dev'
+    bucket_name = config.BUCKET_NAME_ARCHIVE
 
     storage_client = storage.Client()
     bucket = storage_client.bucket(bucket_name)
