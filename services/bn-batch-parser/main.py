@@ -27,9 +27,6 @@ def index():
         logging.error(f'error: {msg}')
         return f'Bad Request: {msg}', HTTPStatus.BAD_REQUEST
 
-    # pubsub_message = envelope['message']
-    
-    # if isinstance(pubsub_message, dict) and 'data' in pubsub_message:
     try:
         data = json.loads(base64.b64decode(pubsub_message['data']).decode())
 
